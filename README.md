@@ -10,7 +10,7 @@ This repository contains code for two applications that make use of the neural n
 * Python >= 3.6
 * pytorch >= 1.1.0
 * dlib >= 19.17
-* opency-python >= 4.1.0.25
+* opencv-python >= 4.1.0.25
 * pillow >= 6.2.0
 * numpy >= 1.17.l2
 

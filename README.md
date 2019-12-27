@@ -20,7 +20,7 @@ I developed the system using Anaconda on Windows 10. If you install these packag
 
 After you cloned this repository to your machine's storage, you need to download the models: 
 
-* Download the main models from [this link](https://drive.google.com/open?id=1Ey22Z12LeWgRD2z_im0HUKyTx_JbTSfA). Unzip the file into the `data` directory under the project's root. The models are released separately with the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode).
+* Download the main models from [this link](https://drive.google.com/open?id=1ajHViqyLDKFKfBtGPE5cbSGcMNa8rz8k). Unzip the file into the `data` directory under the project's root. The models are released separately with the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode).
 * Download `shape_predictor_68_face_landmarks.dat` and save it to the `data` directory. You can download the bzip archive from [here](https://github.com/davisking/dlib-models). Do not forget to uncompress.
 
 Once the downloading is done, the data directory should look like the following:

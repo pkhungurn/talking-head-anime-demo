@@ -8,7 +8,7 @@ This repository contains code for two applications that make use of the neural n
 ## Dependencies
 
 * Python >= 3.6
-* pytorch >= 1.1.0
+* pytorch >= 1.4.0
 * dlib >= 19.17
 * opencv-python >= 4.1.0.25
 * pillow >= 6.2.0

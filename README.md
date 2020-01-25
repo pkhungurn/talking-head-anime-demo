@@ -20,15 +20,15 @@ If you install these packages, you should be all good.
 
 If you use [Anaconda](https://www.anaconda.com/), you also have the option of recreating the Python environment that can be used to run the demo. Open a shell and change directory to the project's root. Then, run the following command:
 
-> conda env create -f environment.yml
+> `conda env create -f environment.yml`
 
 This should download and install all the dependencies. Keep in mind, though, that this will require several gigabytes of your storage. After the installation is done, you can activate the new environment with the following command:
 
-> conda activate talking-head-anime
+> `conda activate talking-head-anime`
 
 Once you are done with the environment, you can deactivate it with:
 
-> conda deactivate
+> `conda deactivate`
 
 ## Prepare the Data
 

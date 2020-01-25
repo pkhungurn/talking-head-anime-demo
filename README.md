@@ -9,12 +9,26 @@ This repository contains code for two applications that make use of the neural n
 
 * Python >= 3.6
 * pytorch >= 1.4.0
-* dlib >= 19.17
-* opencv-python >= 4.1.0.25
-* pillow >= 6.2.0
+* dlib >= 19.19
+* opencv-python >= 4.1.0.30
+* pillow >= 7.0.0
 * numpy >= 1.17.l2
 
-I developed the system using Anaconda on Windows 10. If you install these packages, you should be all good.
+If you install these packages, you should be all good.
+
+## Recreating Python Environment with Anaconda
+
+If you use [Anaconda](https://www.anaconda.com/), you also have the option of recreating the Python environment that can be used to run the demo. Open a shell and change directory to the project's root. Then, run the following command:
+
+  conda env create -f environment.yml
+
+This should download and install all the dependencies. Keep in mind, though, that this will require several gigabytes of your storage. After the installation is done, you can activate the new environment with the following command:
+
+  conda activate talking-head-anime
+
+Once you are done with the environment, you can deactivate it with:
+
+  conda deactivate
 
 ## Prepare the Data
 

@@ -16,8 +16,10 @@ class TwoAlgoFaceRotator(BatchInputModule):
                  intermediate_channels: int = 64,
                  bottleneck_image_size: int = 32,
                  bottleneck_block_count: int = 6,
-                 initialization_method: str = 'he'):
+                 initialization_method: str = 'he',
+                 align_corners: bool = True):
         super().__init__()
+        self.align_corners = align_corners
         self.main_body = EncoderDecoderModule(
             image_size=image_size,
             image_channels=image_channels + pose_size,
@@ -51,9 +53,9 @@ class TwoAlgoFaceRotator(BatchInputModule):
         grid_change = torch.transpose(self.zhou_grid_change(y).view(n, 2, h * w), 1, 2).view(n, h, w, 2)
         device = self.zhou_grid_change.weight.device
         identity = torch.Tensor([[1, 0, 0], [0, 1, 0]]).to(device).unsqueeze(0).repeat(n, 1, 1)
-        base_grid = affine_grid(identity, [n, c, h, w])
+        base_grid = affine_grid(identity, [n, c, h, w], align_corners=self.align_corners)
         grid = base_grid + grid_change
-        resampled = grid_sample(image, grid, mode='bilinear', padding_mode='border')
+        resampled = grid_sample(image, grid, mode='bilinear', padding_mode='border', align_corners=self.align_corners)
 
         return [color_changed, resampled, color_change, alpha_mask, grid_change, grid]
 
@@ -69,7 +71,8 @@ class TwoAlgoFaceRotatorSpec(BatchInputModuleSpec):
                  intermediate_channels: int = 64,
                  bottleneck_image_size: int = 32,
                  bottleneck_block_count: int = 6,
-                 initialization_method: str = 'he'):
+                 initialization_method: str = 'he',
+                 align_corners: bool = True):
         self.image_size = image_size
         self.image_channels = image_channels
         self.pose_size = pose_size
@@ -77,6 +80,7 @@ class TwoAlgoFaceRotatorSpec(BatchInputModuleSpec):
         self.bottleneck_image_size = bottleneck_image_size
         self.bottleneck_block_count = bottleneck_block_count
         self.initialization_method = initialization_method
+        self.align_corners = align_corners
 
     def get_module(self) -> BatchInputModule:
         return TwoAlgoFaceRotator(
@@ -86,4 +90,5 @@ class TwoAlgoFaceRotatorSpec(BatchInputModuleSpec):
             self.intermediate_channels,
             self.bottleneck_image_size,
             self.bottleneck_block_count,
-            self.initialization_method)
+            self.initialization_method,
+            self.align_corners)

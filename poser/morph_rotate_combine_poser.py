@@ -29,7 +29,6 @@ class MorphRotateCombinePoser(Poser):
         self.combine_module_spec = combine_module_spec
         self.combine_module_file_name = combine_module_file_name
         self.device = device
-        self.map_location = {"cuda:0": "cpu"} if self.device.type == "cpu" else None
         self._image_size = image_size
 
         self.morph_module = None
@@ -45,7 +44,7 @@ class MorphRotateCombinePoser(Poser):
     def get_morph_module(self):
         if self.morph_module is None:
             G = self.morph_module_spec.get_module().to(self.device)
-            G.load_state_dict(torch_load(self.morph_module_file_name, map_location=self.map_location))
+            G.load_state_dict(torch_load(self.morph_module_file_name, map_location=self.device))
             self.morph_module = G
             G.train(False)
         return self.morph_module
@@ -53,7 +52,7 @@ class MorphRotateCombinePoser(Poser):
     def get_rotate_module(self):
         if self.pose_module is None:
             G = self.rotate_module_spec.get_module().to(self.device)
-            G.load_state_dict(torch_load(self.rotate_module_file_name, map_location=self.map_location))
+            G.load_state_dict(torch_load(self.rotate_module_file_name, map_location=self.device))
             self.pose_module = G
             G.train(False)
         return self.pose_module
@@ -61,7 +60,7 @@ class MorphRotateCombinePoser(Poser):
     def get_combine_module(self):
         if self.combine_module is None:
             G = self.combine_module_spec.get_module().to(self.device)
-            G.load_state_dict(torch_load(self.combine_module_file_name, map_location=self.map_location))
+            G.load_state_dict(torch_load(self.combine_module_file_name, map_location=self.device))
             self.combine_module = G
             G.train(False)
         return self.combine_module

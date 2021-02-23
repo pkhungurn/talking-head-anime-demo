@@ -74,13 +74,14 @@ def rgba_to_numpy_image(torch_image: Tensor):
 
 def extract_pytorch_image_from_filelike(file):
     pil_image = PIL.Image.open(file)
-    image_size = pil_image.width
-    image = (numpy.asarray(pil_image) / 255.0).reshape(image_size, image_size, 4)
+    numpy_image = numpy.asarray(pil_image) / 255.0
+    h, w, c = numpy_image.shape
+    image = numpy_image.reshape(h, w, c)
     image[:, :, 0:3] = srgb_to_linear(image[:, :, 0:3])
     image = image \
-        .reshape(image_size * image_size, 4) \
+        .reshape(h * w, c) \
         .transpose() \
-        .reshape(4, image_size, image_size)
+        .reshape(c, h, w)
     torch_image = torch.from_numpy(image).float() * 2.0 - 1.0
     return torch_image
 

@@ -7,7 +7,7 @@ This repository contains code for two applications that make use of the neural n
 
 ## Try the Manual Poser on Google Colab
 
-If you do not have the required hardware or do not want to download the code and set up an environment to run it, click (https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pkhungurn/talking-head-anime-demo/blob/colab/tha_colab.ipynb) to try running the manual poser on [Google Colab](https://research.google.com/colaboratory/faq.html).
+If you do not have the required hardware or do not want to download the code and set up an environment to run it, click [https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pkhungurn/talking-head-anime-demo/blob/colab/tha_colab.ipynb) to try running the manual poser on [Google Colab](https://research.google.com/colaboratory/faq.html).
 
 ## Hardware Requirements
 

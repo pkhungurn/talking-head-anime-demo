@@ -37,3 +37,4 @@ build/
 */out/*
 *.pyc
 **/.cache/*
+.ipynb_checkpoints/

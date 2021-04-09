@@ -1,6 +1,6 @@
 # Demo Code for "Talking Head Anime from a Single Image"
 
-You may want to check out the much more capable Version 2 of the same software: http://pkhungurn.github.io/talking-head-anime-2-demo
+You may want to check out the much more capable Version 2 of the same software: http://github.com/pkhungurn/talking-head-anime-2-demo
   
 This repository contains code for two applications that make use of the neural network system in the [Talking Head Anime from a Single Image](http://pkhungurn.github.io/talking-head-anime/) project:  
   

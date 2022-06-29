@@ -108,6 +108,6 @@ You can also used the following BibTex entry:
 
 While the author is an employee of Google Japan, this software is not Google's product and is not supported by Google.
 
-The copyright of this software belongs to me as I have requested it using the <a href="https://opensource.google/docs/iarc/">IARC process</a>. However, one of the condition for the release of this source code is that the publication of the "Talking Head Anime from a Single Image" be approved by the internal publication approval process. I requested approval on 2019/11/17. It has been reviewed by a researcher, but has not been formally approved by a manager in my product area (Google Maps). I have decided to release this code, bearing all the risks that it may incur.
+The copyright of this software belongs to me as I have requested it using the <a href="https://opensource.google/documentation/reference/releasing#iarc">IARC process</a>. However, one of the condition for the release of this source code is that the publication of the "Talking Head Anime from a Single Image" be approved by the internal publication approval process. I requested approval on 2019/11/17. It has been reviewed by a researcher, but has not been formally approved by a manager in my product area (Google Maps). I have decided to release this code, bearing all the risks that it may incur.
 
 I made use of [a face tracker code implemented by KwanHua Lee](https://github.com/lincolnhard/head-pose-estimation) to implement the puppeteer tool.

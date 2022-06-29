@@ -86,6 +86,24 @@ To run the puppeteer, issue the following command in your shell:
 
 > `python app/puppeteer.py`
 
+## Citation
+
+If your academic work benefits from the code in this repository, please cite the project's web page as follows:
+
+> Pramook Khungurn. **Talking Head Anime from a Single Image.** http://pkhungurn.github.io/talking-head-anime/, 2019. Accessed: YYYY-MM-DD.
+
+You can also used the following BibTex entry:
+
+```
+@misc{Khungurn:2019,
+    author = {Pramook Khungurn},
+    title = {Talking Head Anime from a Single Image},
+    howpublished = {\url{http://pkhungurn.github.io/talking-head-anime/}},
+    year = 2019,
+    note = {Accessed: YYYY-MM-DD},
+}
+```
+
 ## Disclaimer
 
 While the author is an employee of Google Japan, this software is not Google's product and is not supported by Google.
